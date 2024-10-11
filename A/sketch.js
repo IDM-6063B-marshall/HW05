@@ -16,18 +16,16 @@
 // }
 
 //Star blinking every second
-// Moon phases every minute
-// Color change from light to dark blue over one hour
+// Moon phases every 30 seconds
+// Color change from light to dark blue over one minute
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
 }
 
-let x = 0;
+
 
 function draw() {
-
   push();
   //background/sky (one minute = 4 zeroes)
   //want to make it fade back out also??
@@ -42,43 +40,76 @@ function draw() {
   //moon base
   fill("gold");
   stroke("gold");
-  ellipse(width / 3, height / 2, 100);
+  ellipse(width / 2, height / 2, 200);
 
   //moon overlap (30 seconds= 4 zeroes)
   let pm = 30000;
   let cm = millis() % pm;
-  let dm = map(cm, 0, pm, width / 3 - 105, width / 3 + 105);
+  let dm = map(cm, 0, pm, width / 2 - 205, width / 2 + 205);
   fill(0, 0, hbg);
   stroke(0, 0, hbg);
-  ellipse(dm, height / 2, 100);
+  ellipse(dm, height / 2, 200);
   dm = dm + 1;
   pop();
 
-  push();
   //star (1 second)
   fill("gold");
-  stroke("gold")
+  stroke("gold");
   strokeWeight(10);
-  // let ps = 1000;
-  // let cs = millis() % ps;
-  // let ds = map(cs, 0, ps, 30, 3);
-  // star(width / 2, height / 2, 10, 3);
 
+  push();
   beginShape();
-  translate(width / 2, height / 2);
-  let op = 100; //outer point
-  let ip = 15; //inner point
-  vertex(0, -op);
-  vertex(ip, -ip);
-  vertex(op, 0);
-  vertex(ip, ip);
-  vertex(0, op);
-  vertex(-ip, ip);
-  vertex(-op, 0);
-  vertex(-ip, -ip);
+  translate(width / 3, height / 3);
+  let op1 = 10; //outer point
+  let ip1 = 3; //inner point
+  vertex(0, -op1);
+  vertex(ip1, -ip1);
+  vertex(op1, 0);
+  vertex(ip1, ip1);
+  vertex(0, op1);
+  vertex(-ip1, ip1);
+  vertex(-op1, 0);
+  vertex(-ip1, -ip1);
   endShape(CLOSE);
+  pop();
+
+  push();
+  beginShape();
+  translate(width / 5, height / 5);
+  let op2 = 10; //outer point
+  let ip2 = 3; //inner point
+  vertex(0, -op2);
+  vertex(ip2, -ip2);
+  vertex(op2, 0);
+  vertex(ip2, ip2);
+  vertex(0, op2);
+  vertex(-ip2, ip2);
+  vertex(-op2, 0);
+  vertex(-ip2, -ip2);
+  endShape(CLOSE);
+  pop();
+
+  //need to make them twinkle somehow > cover em up?
+
+  push();
+  fill(0, 0, hbg);
+  stroke(0, 0, hbg);
+  let ps1 = 2000; //period star
+  let cs1 = millis() % ps1;
+  if (cs1 > 1000) {
+    ellipse(width / 3, height / 3, 50);
+  }
+  pop();
+
+  push();
+  fill(0, 0, hbg);
+  stroke(0, 0, hbg);
+  let ps2 = 2000; //period star
+  let cs2 = millis() % ps2;
+  if (cs2 < 1000) {
+    ellipse(width / 5, height / 5, 50);
+  }
+  pop();
 
   pop();
-  
-  
 }
