@@ -9,5 +9,6 @@ I am very proud of this one and had a lot of fun doing it! It feels like this wa
 ---
 SKETCH B
 
+"PEA PIECE. Carry a bag of peas. Leave a pea wherever you go."
 
-
+As soon as I saw this piece in Grapefruit I imagined how annoying it would be to carry and drop peas everywhere and I immediately envisioned the webpage where you can't avoid leaving peas everywhere. I tried having it be based on the mouse click but it was funnier to have it be continuous. I know this is a pretty simple bit of code but in my defense I did learn how to put images in there! I couldn't figure out how to set the path from my computer so I ended up using an image hosted on Walmart's website. I am starting to imagine things I could make and identifying if I know how to do them yet or not.

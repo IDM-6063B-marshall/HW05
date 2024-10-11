@@ -28,7 +28,6 @@ function setup() {
 function draw() {
   push();
   //background/sky (one minute = 4 zeroes)
-  //want to make it fade back out also??
   let pbg = 60000;
   let cbg = millis() % pbg;
   // hue background
